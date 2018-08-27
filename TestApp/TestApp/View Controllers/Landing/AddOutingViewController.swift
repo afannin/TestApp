@@ -6,9 +6,6 @@
 //  Copyright © 2018 Andrew Fannin. All rights reserved.
 //
 
-<<<<<<< Updated upstream
-import Foundation
-=======
 import UIKit
 import Foundation
 
@@ -44,4 +41,3 @@ class AddOutingViewController: BaseViewController, UITextFieldDelegate {
         }
     }
 }
->>>>>>> Stashed changes

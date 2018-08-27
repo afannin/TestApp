@@ -73,11 +73,7 @@ extension OutingViewController {
     
     private func setUpNavBar() {
         
-<<<<<<< Updated upstream:TestApp/TestApp/View Controllers/Landing/OutingViewController.swift
-        navigationBar.topItem?.title = "Hike Journal"
-=======
         navigationBar.topItem?.title = "Outings"
->>>>>>> Stashed changes:TestApp/TestApp/View Controllers/Landing/OutingViewController.swift
     }
     
     private func setUpTableView() {

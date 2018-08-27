@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class LandingViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class OutingViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - IBOutlets
         
@@ -25,7 +25,16 @@ class LandingViewController: BaseViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         
         setUpTableView()
+        setUpNavBar()
     }
+    
+    // MARK: - IBActions
+    
+    @IBAction func addButtonTapped(_ sender: Any) {
+        
+        present(AddOutingViewController(), animated: true, completion: nil)
+    }
+    
     
     // MARK: - UITableView
     
@@ -60,18 +69,27 @@ class LandingViewController: BaseViewController, UITableViewDelegate, UITableVie
 
 // MARK: - TableView Helpers
 
-extension LandingViewController {
+extension OutingViewController {
+    
+    private func setUpNavBar() {
+        
+<<<<<<< Updated upstream:TestApp/TestApp/View Controllers/Landing/OutingViewController.swift
+        navigationBar.topItem?.title = "Hike Journal"
+=======
+        navigationBar.topItem?.title = "Outings"
+>>>>>>> Stashed changes:TestApp/TestApp/View Controllers/Landing/OutingViewController.swift
+    }
     
     private func setUpTableView() {
         
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.register(cellType: LandingTableViewCell.self)
+        tableView.register(cellType: OutingTableViewCell.self)
     }
     
     private func dequeueLandingCell(indexPath: IndexPath) -> UITableViewCell {
         
-        return tableView.dequeueReusableCell(for: indexPath, cellType: LandingTableViewCell.self)
+        return tableView.dequeueReusableCell(for: indexPath, cellType: OutingTableViewCell.self)
     }
 }

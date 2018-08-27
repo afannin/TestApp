@@ -10,11 +10,19 @@ import UIKit
 import Foundation
 import Reusable
 
-class LandingTableViewCell: UITableViewCell, NibReusable {
+class OutingTableViewCell: UITableViewCell, NibReusable {
     
     // MARK: - IBOutlets
     
     @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    
+    // MARK: - UI
+    
+    func load(title: String = "", description: String = "") {
+        
+        titleLabel.text = title
+        descriptionLabel.text = description
+    }
 }

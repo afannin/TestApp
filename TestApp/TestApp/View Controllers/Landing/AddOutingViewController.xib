@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddOutingViewController" customModule="TestApp" customModuleProvider="target">
+            <connections>
+                <outlet property="dateTextField" destination="Onc-7l-jJg" id="sgy-Vc-IoY"/>
+                <outlet property="descriptionTextField" destination="LLh-1J-VuY" id="eIz-kG-U6e"/>
+                <outlet property="locationTextField" destination="TWb-8c-tfZ" id="JDe-hP-s9c"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Kiz-Jc-ljU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="iey-te-IP9">
+                    <rect key="frame" x="50" y="95" width="275" height="122"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="122" id="TCe-UV-60r"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add an outing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffz-dn-QXT">
+                    <rect key="frame" x="0.0" y="225" width="375" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="CeB-Vh-UfY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3EU-U2-Rr9">
+                    <rect key="frame" x="25" y="271" width="325" height="230"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFx-Qo-PKP">
+                            <rect key="frame" x="0.0" y="0.0" width="325" height="30"/>
+                            <state key="normal" title="Upload an Image"/>
+                            <connections>
+                                <action selector="uploadButtonTapped:" destination="-1" eventType="touchUpInside" id="ycx-7p-EvS"/>
+                            </connections>
+                        </button>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Onc-7l-jJg">
+                            <rect key="frame" x="0.0" y="50" width="325" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="pBG-Pc-dMn"/>
+                            </connections>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TWb-8c-tfZ">
+                            <rect key="frame" x="0.0" y="100" width="325" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="cnL-6K-CTp"/>
+                            </connections>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LLh-1J-VuY">
+                            <rect key="frame" x="0.0" y="150" width="325" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="nPJ-4B-R85"/>
+                            </connections>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51U-LH-qL4">
+                            <rect key="frame" x="0.0" y="200" width="325" height="30"/>
+                            <state key="normal" title="Save"/>
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="-1" eventType="touchUpInside" id="nO6-iB-g8f"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ffz-dn-QXT" firstAttribute="top" secondItem="iey-te-IP9" secondAttribute="bottom" constant="8" id="3UZ-hO-NaJ"/>
+                <constraint firstItem="iey-te-IP9" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-50" id="3wS-Vr-7Mo"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3EU-U2-Rr9" secondAttribute="trailing" constant="25" id="6J8-FD-hLo"/>
+                <constraint firstItem="Ffz-dn-QXT" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="838-Pf-xoH"/>
+                <constraint firstItem="iey-te-IP9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="75" id="TPq-G6-sPC"/>
+                <constraint firstItem="3EU-U2-Rr9" firstAttribute="top" secondItem="Ffz-dn-QXT" secondAttribute="bottom" constant="15" id="Zd9-8e-wO3"/>
+                <constraint firstItem="iey-te-IP9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="csU-Bf-rZd"/>
+                <constraint firstItem="Ffz-dn-QXT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="f0I-FE-v3j"/>
+                <constraint firstItem="3EU-U2-Rr9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="pfZ-4c-vP0"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="204.5" y="48.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="placeholder" width="2592" height="1728"/>
+    </resources>
+</document>

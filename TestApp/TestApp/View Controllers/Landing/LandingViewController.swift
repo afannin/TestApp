@@ -24,8 +24,7 @@ class LandingViewController: BaseViewController, UITableViewDelegate, UITableVie
         
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        setUpTableView()
     }
     
     // MARK: - UITableView
@@ -42,14 +41,37 @@ class LandingViewController: BaseViewController, UITableViewDelegate, UITableVie
         return 5
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 125
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // TODO: Update this with a custom cell
-        return UITableViewCell()
+        return dequeueLandingCell(indexPath: indexPath)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         presentUnderDevelopmentAlert()
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+// MARK: - TableView Helpers
+
+extension LandingViewController {
+    
+    private func setUpTableView() {
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(cellType: LandingTableViewCell.self)
+    }
+    
+    private func dequeueLandingCell(indexPath: IndexPath) -> UITableViewCell {
+        
+        return tableView.dequeueReusableCell(for: indexPath, cellType: LandingTableViewCell.self)
     }
 }
